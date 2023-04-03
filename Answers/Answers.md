@@ -9,11 +9,14 @@
 There you can check the changes sugested and read some comments.
 
 -   Findings:
-    1. The first is that the contract has errors. "send" is only available to payable addresses
-    2. It does not check the return value for "send" so if the transfer fails the contract will not know
+    1. "Critical" The contract has errors. "send" is only available to payable addresses
+    2. "Critical" It does not check the return value for "send"
 -   Solution:
+
     1. Rewrite as suggested
     2. Check for the return value. For "send" is a boolean. True if succed, false if not
+
+-   Note: Some lines were added to have a minimalistic contract
 
 2. The answer to this code is written on
 
@@ -21,10 +24,20 @@ There you can check the changes sugested and read some comments.
 
 There you can check the changes sugested and read some comments.
 
--   Findings: In the function withdrawBalance() a state variable is written
+-   Findings: "Critical" In the function withdrawBalance() a state variable is written
     after a call. In this case the mapping userBalance.
 -   Solution: move that line of code before the call.
--   Note: B aware that if the call is not successfull you have to return the balance
+-   Note: Be aware that if the call is not successfull you have to return the balance
+
+3. The answer to this code is written on
+
+> contracts/Section_2/Refund.sol
+
+There you can check the changes sugested and read some comments.
+
+-   Findings: "Medium" In the for loop the local variable "X" it is not initialized
+-   Solution: initialize the variable
+-   Note: Some lines were added to have a minimalistic contract
 
 ## Section 3: Solidity Coding Tasks
 
