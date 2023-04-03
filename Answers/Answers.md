@@ -2,42 +2,121 @@
 
 ## Section 2: Code Snippets
 
-1. The answer to this code is written on
+### Code snippet 1
 
-> contracts/Section_2/Withdraw.sol
+1. The original code is:
 
-There you can check the changes sugested and read some comments.
+```javascript
+function withdrawBalance(uint256 _amount) public {
+    require(balances[msg.sender] >= _amount);
+    balances[msg.sender] -= _amount;
+    etherLeft -= _amount;
+    msg.sender.send(_amount);
+}
+```
 
 -   Findings:
     1. "Critical" The contract has errors. "send" is only available to payable addresses
-    2. "Critical" It does not check the return value for "send"
--   Solution:
+        - Solution: Rewrite as suggested
+    2. "Critical" It does not check the return value for "send". It is recomnded to always check if any transaction is completed
+        - Solution: Check for the return value. For "send" is a boolean. True if succed, false if not
 
-    1. Rewrite as suggested
-    2. Check for the return value. For "send" is a boolean. True if succed, false if not
+Suggested code:
 
--   Note: Some lines were added to have a minimalistic contract
+```javascript
+   function withdrawBalance(uint256 _amount) public {
+        require(balances[msg.sender] >= _amount);
+        balances[msg.sender] -= _amount;
+        etherLeft -= _amount;
+        bool success = payable(msg.sender).send(_amount);
+        require(success, "Something went wrong");
+    }
+```
 
-2. The answer to this code is written on
+### Code snippet 2
 
-> contracts/Section_2/Bank.sol
+2. The original code is:
 
-There you can check the changes sugested and read some comments.
+```javascript
+contract Bank {
+   mapping (address => uint) userBalance;
 
--   Findings: "Critical" In the function withdrawBalance() a state variable is written
-    after a call. In this case the mapping userBalance.
--   Solution: move that line of code before the call.
+   function getBalance(address u) public view returns(uint){
+      return userBalance[u];
+   }
+
+   function addToBalance() external payable{
+      userBalance[msg.sender] += msg.value;
+   }
+
+   function withdrawBalance() external{
+      uint amountToWithdraw = userBalance[msg.sender];
+      (bool success, ) = msg.sender.call{value:amountToWithdraw}("");
+      if( ! success ){
+         revert();
+      }
+      userBalance[msg.sender] = 0;
+   }
+}
+```
+
+-   Findings:
+    1. "Critical" In the function withdrawBalance() a state variable is written after a call. In this case the mapping userBalance. This can lead to reentrancy attacks.
+        - Solution: move that line of code before the call.
 -   Note: Be aware that if the call is not successfull you have to return the balance
 
-3. The answer to this code is written on
+Suggested code:
 
-> contracts/Section_2/Refund.sol
+```javascript
+contract Bank {
+    mapping(address => uint) userBalance;
 
-There you can check the changes sugested and read some comments.
+    function getBalance(address u) public view returns (uint) {
+        return userBalance[u];
+    }
 
--   Findings: "Medium" In the for loop the local variable "X" it is not initialized
--   Solution: initialize the variable
--   Note: Some lines were added to have a minimalistic contract
+    function addToBalance() external payable {
+        userBalance[msg.sender] += msg.value;
+    }
+
+    function withdrawBalance() external {
+        uint amountToWithdraw = userBalance[msg.sender];
+        userBalance[msg.sender] = 0;
+        (bool success, ) = msg.sender.call{value: amountToWithdraw}("");
+        if (!success) {
+            revert();
+        }
+        // The next line was moved to the top
+        //userBalance[msg.sender] = 0;
+    }
+}
+```
+
+### Code snippet 3
+
+3. The original code is:
+
+```javascript
+   function refundAll() public {
+      for(uint x; x < refundAddress.length; x++) {
+         require(payable(refundAddresses[x]).send(refunds[refundAddresses[x]]));
+      }
+   }
+```
+
+-   Findings:
+    1. "Medium" In the for loop the local variable "X" it is not initialized
+        - Solution: initialize the variable
+
+Suggested code:
+
+```javascript
+  function refundAll() public {
+        for (uint x = 0; x < refundAddresses.length; x++) {
+            require(payable(refundAddresses[x]).send(refunds[refundAddresses[x]]));
+        }
+    }
+```
 
 ## Section 3: Solidity Coding Tasks
 
