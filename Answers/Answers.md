@@ -20,7 +20,7 @@ You have the next three methods
 | call.value | all remaining gas(adjustable) | `false` on failure | wei   |
 | transfer   | 2300(not adjustable)          | throws on failure  | wei   |
 
-It is important to notice that `send` and `call.value` does not revert if fails so with them you will have to use another security pattern `Guard Check Pattern` for example for `send` you can use
+It is important to notice that `send` and `call.value` does not revert if fails so with them you will have to use a behavioral pattern `Guard Check Pattern` for example for `send` you can use
 
 ```javascript
 require(<address>.send(amount))
@@ -49,6 +49,23 @@ When calling an external address, the calling contract also transfers the contro
 -   Want to guard your smart contract to re-entrancy attacks
 
 To succesfully apply this pattern all internal state must be fully up to date before external interactions. This means that state variables should be updated before external calls, for example the balance of a user should be updated and then you make the transfer, if you apply the Secure Ether Transfer explained above there is no problem with this, because if something fails everything will be reverted included the balances updates.
+
+### Question 4: Solidity behaviour pattern
+
+-   Guard Check:
+
+This pattern ensure the behavior and the inputs of an smart contract are as expected.
+The desired behavior of a smart contract would be to check everithing before proceed with the logic, if not it reverts. It can be used to:
+
+-   Validate user inputs
+-   Check contract state before executing logic
+-   Check invariants
+-   Check return values
+-   Rule out conditions that should not be possible
+
+For this we have `require()`, `assert()` and `revert()`. One important diference is the opcodes used in them. The opcode for `require()` and `revert()` refund all the gas that has not been consumed while with `assert()`all the gas is used. The documentation recomends to us `require()` to ensure valid conditions, such as inputs, return values and state variables. `assert()` should be used to test for internal errors and `revert()` should be used in complex cases, e.g. when the condition can not be written in one line and we have to use if-else trees.
+
+This pattern also increase the readability of the code.
 
 ## Section 2: Code Snippets
 
