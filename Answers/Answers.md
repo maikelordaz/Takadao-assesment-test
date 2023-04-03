@@ -2,12 +2,24 @@
 
 ## Section 2: Code Snippets
 
+1. The answer to this code is written on
+
+> contracts/Section_2/Withdraw.sol
+
+There you can check the changes sugested and read some comments.
+
+-   Findings:
+    1. The first is that the contract has errors. "send" is only available to payable addresses
+    2. It does not check the return value for "send" so if the transfer fails the contract will not know
+-   Solution:
+    1. Rewrite as suggested
+    2. Check for the return value. For "send" is a boolean. True if succed, false if not
+
 2. The answer to this code is written on
 
 > contracts/Section_2/Bank.sol
 
 There you can check the changes sugested and read some comments.
-The findings are:
 
 -   Findings: In the function withdrawBalance() a state variable is written
     after a call. In this case the mapping userBalance.
