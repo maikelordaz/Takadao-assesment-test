@@ -1,5 +1,55 @@
 # Answers
 
+## Section 1: Long answers questions
+
+### Question 3: Security patterns
+
+1. Secure Ether Transfers:
+
+It is important to always secure and check every transfer, even though this feature is not the main application of Ethereum, it is still a necessary and highly used feature. It is important to use this pattern when:
+
+-   Transfer from a contract address to another address in a scure way
+-   Not sure of which method use
+-   Want to avoid any re-entrancy attacks
+
+You have the next three methods
+
+| Function   | Gas                           | Exception          | Units |
+| ---------- | ----------------------------- | ------------------ | ----- |
+| send       | 2300 (not adjustable)         | `false` on failure | wei   |
+| call.value | all remaining gas(adjustable) | `false` on failure | wei   |
+| transfer   | 2300(not adjustable)          | throws on failure  | wei   |
+
+It is important to notice that `send` and `call.value` does not revert if fails so with them you will have to use another security pattern `Guard Check Pattern` for example for `send` you can use
+
+```javascript
+require(<address>.send(amount))
+```
+
+And for `call.value`
+
+```javascript
+(bool success, ) = <address>.call{value: amount};
+require(success, "Something went wrong");
+```
+
+This is equal to
+
+```javascript
+<address>.transfer(amount)
+```
+
+In most cases the must go should be `transfer` because it revert automatically. Use `send` when you need to handle the error without reverting all state changes. `call.value` should be the last resort, one good application for `call.value` is to send ethers to fallback and receive functions that needs more gas than usual
+
+2. Check Effects Interactions
+
+When calling an external address, the calling contract also transfers the control flow to the external entity, who is now can execute any inheritance code, in case it is another contract. In case when the external entity is a malicious contract can return an unexpected state to the initial contract. One of the most common attack vectors is a reentrancy attack, in which the malicious contract is reentering the initial contract before the external call is finished, this was part of the most prominent hack in Ethereum history the DAO exploit. This vulnerability is not present in other software enviroments, making it hard to avoid for developers not familiarized with smart contract development. This pattern combine with the one discused above provide a safe solution to re-entrancy attacks. Use this pattern when:
+
+-   Can not avoid to hand over the control to an external entity
+-   Want to guard your smart contract to re-entrancy attacks
+
+To succesfully apply this pattern all internal state must be fully up to date before external interactions. This means that state variables should be updated before external calls, for example the balance of a user should be updated and then you make the transfer, if you apply the Secure Ether Transfer explained above there is no problem with this, because if something fails everything will be reverted included the balances updates.
+
 ## Section 2: Code Snippets
 
 ### Code snippet 1
@@ -63,7 +113,6 @@ contract Bank {
 -   Findings:
     1. "Critical" In the function withdrawBalance() a state variable is written after a call. In this case the mapping userBalance. This can lead to reentrancy attacks.
         - Solution: move that line of code before the call.
--   Note: Be aware that if the call is not successfull you have to return the balance
 
 Suggested code:
 
