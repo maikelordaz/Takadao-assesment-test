@@ -1,10 +1,10 @@
 # Web3_smart contract developer assessment tests
 This project is intended to be a part of a technical test. <br/>
 
-+ [Walkthrough](#-Walkthrough:)
-+ [1. Questions and Answers](#-Questions-and-Answers:)
-+ [Question 1.1](#-Question-1)
-+ [Answer 1.1](#-Answer-1)
++ [Walkthrough](#-walkthrough)
++ [1. Questions and Answers](#-questions-and-answers)
++ [Question 1.1](#-question-1)
++ [Answer 1.1](#-answer-1)
 + [Question 1.2](#-Question-2)
 + [Answer 1.2](#-Answer-2)
 + [Question 1.3](#-Question-3)
@@ -12,7 +12,7 @@ This project is intended to be a part of a technical test. <br/>
 + [Question 1.4](#-Question-4)
 + [Answer 1.4](#-Answer-4)
 
-## :rocket: Walkthrough: 
+## :rocket: Walkthrough 
 
 1. Clone this repo.
 3. Install the dependencies with  `yarn install.
@@ -22,7 +22,7 @@ This project is intended to be a part of a technical test. <br/>
     + POLYGONSCAN_API_KEY=to verify the contract if you deploy in some public net.
 5. Read the answers for the test below and follow the instructions when it is needed
 
-## :books: Questions and Answers: 
+## :books: Questions and Answers 
 
 The tasks in this document are divided into 4 sections. The first section consists of open-ended
 questions. The second section consists of code snippets that require some type of analysis. The
