@@ -1,9 +1,10 @@
 # Web3_smart contract developer assessment tests
 This project is intended to be a part of a technical test. <br/>
 
-+ [Walkthrough](#walkthrough)
-+ [1. Questions and Answers](#questions-and-answers)
-+ [Question 1.1](#question-1)
++ [Walkthrough](#rocket-walkthrough)
++ [Questions and Answers](#books-questions-and-answers)
++ [1. Long Answer Questions](#open_book-section-1:-long-answer-questions)
++ [Question 1.1](#open_book-question-1)
 + [Answer 1.1](#answer-1)
 + [Question 1.2](#-Question-2)
 + [Answer 1.2](#-Answer-2)
