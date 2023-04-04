@@ -154,12 +154,14 @@ In most cases the must go should be `transfer` because it revert automatically. 
 
 2. Check Effects Interactions
 
-When calling an external address, the calling contract also transfers the control flow to the external entity, who is now can execute any inheritance code, in case it is another contract. In case when the external entity is a malicious contract can return an unexpected state to the initial contract. One of the most common attack vectors is a reentrancy attack, in which the malicious contract is reentering the initial contract before the external call is finished, this was part of the most prominent hack in Ethereum history the DAO exploit. This vulnerability is not present in other software enviroments, making it hard to avoid for developers not familiarized with smart contract development. This pattern combine with the one discused above provide a safe solution to re-entrancy attacks. Use this pattern when:
+When calling an external address, the calling contract also transfers the control flow to the external entity, who is now can execute any inheritance code, in case it is another contract. In case when the external entity is a malicious contract can return an unexpected state to the initial contract. One of the most common attack vectors is a reentrancy attack, in which the malicious contract is reentering the initial contract before the external call is finished, this was part of the most prominent hack in Ethereum history the DAO exploit. This vulnerability can cost a lot of money for investors. This pattern combine with the one discused above provide a safe solution to re-entrancy attacks. I try to use this pattern when:
 
 -   Can not avoid to hand over the control to an external entity
 -   Want to guard your smart contract to re-entrancy attacks
 
-To succesfully apply this pattern all internal state must be fully up to date before external interactions. This means that state variables should be updated before external calls, for example the balance of a user should be updated and then you make the transfer, if you apply the Secure Ether Transfer explained above there is no problem with this, because if something fails everything will be reverted included the balances updates.
+To succesfully apply this pattern all internal state must be fully up to date before external interactions. This means that state variables should be updated before external calls, for example the balance of a user should be updated and then you make the transfer, if I already applied the Secure Ether Transfer explained above there is no problem with this, because if something fails everything will be reverted included the balances updates. This also give some design pattern to remember when writing smart contracts
+
+My reason to select this two security patterns is that when they are applied together in a correct manner they help to avoid any exploits and vulnerabilities, also they make me to always write the same way this also reduce the errors when coding. It is necesary to always check if ether was send (or any token) and this two patterns ensure that
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
@@ -185,14 +187,13 @@ The desired behavior of a smart contract would be to check everithing before pro
 
 For this we have `require()`, `assert()` and `revert()`. One important diference is the opcodes used in them. The opcode for `require()` and `revert()` refund all the gas that has not been consumed while with `assert()`all the gas is used. The documentation recomends to us `require()` to ensure valid conditions, such as inputs, return values and state variables. `assert()` should be used to test for internal errors and `revert()` should be used in complex cases, e.g. when the condition can not be written in one line and we have to use if-else trees.
 
-This pattern also increase the readability of the code.
+This pattern also increase the readability of the code, and even help to write good unit tests
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
 ### :open_book: Code Snippets
 
-This section consists of 3 questions. For each question, make sure to apply the fixes (if any)
-in a solidity file.
+This section consists of 3 questions. For each question, make sure to apply the fixes (if any) in a solidity file.
 
 #### :question: Code snippet 1 :question:
 
@@ -211,6 +212,8 @@ function withdrawBalance(uint256 _amount) public {
 
 #### :dart: Snippet 1 Answer :dart:
 
+Check the solidity file at [here](./contracts/Section_2/Withdraw.sol)
+
 -   Findings:
     1. "Critical" The contract has errors. "send" is only available to payable addresses
         - Solution: Rewrite as suggested
@@ -228,6 +231,8 @@ Suggested code:
         require(success, "Something went wrong");
     }
 ```
+
+Note: Some lines where added to complete a minimalistic contract
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
@@ -263,6 +268,8 @@ contract Bank {
 
 #### :dart: Snippet 2 Answer :dart:
 
+Check the solidity file at [here](./contracts/Section_2/Bank.sol)
+
 -   Findings:
     1. "Critical" In the function withdrawBalance() a state variable is written after a call. In this case the mapping userBalance. This can lead to reentrancy attacks.
         - Solution: move that line of code before the call.
@@ -288,8 +295,6 @@ contract Bank {
         if (!success) {
             revert();
         }
-        // The next line was moved to the top
-        //userBalance[msg.sender] = 0;
     }
 }
 ```
@@ -313,6 +318,8 @@ If no vulnerabilities exist, explain why the code is invulnerable. (5pt)
 
 #### :dart: Snippet 3 Answer :dart:
 
+Check the solidity file at [here](./contracts/Section_2/Refund.sol)
+
 -   Findings:
     1. "Medium" In the for loop the local variable "X" it is not initialized
         - Solution: initialize the variable
@@ -326,6 +333,7 @@ Suggested code:
         }
     }
 ```
+Note: Some lines where added to complete a minimalistic contract
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
@@ -364,26 +372,19 @@ contract Auction {
 
 #### :dart: Answer :dart:
 
-The solidity smart contract that exploit and hack the Auction contract is in the folder
-
-> contracts/Section_3/Auction.sol
+The solidity smart contract that exploit and hack the Auction contract is in [this file](./contracts/Section_3/Auction.sol)
 
 In the same file is the Auction contract (this is the problem to solve) and the HackAuction contract (this is the answer). There are some comments to explain both contracts. You can compile with
 
 > yarn compile
 
-The unit tests for the hack are in
-
-> test/section3/HackAuction.test.js
+The unit tests for the hack are in [this file](./test/section3/HackAuction.test.js)
 
 The tests also have comments to explain. To run them use
 
 > yarn test
 
-There was the need to write some deploy scripts. Check them on
-
-> deploy/03-section.js/01-deploy-auction.js
-> deploy/03-section.js/02-deploy-hack-auction.js
+There was the need to write some deploy scripts. Check them [here](./deploy/03-section-3.js/01-deploy-auction.js) and [here](./deploy/03-section-3.js/02-deploy-hack-auction.js)
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
