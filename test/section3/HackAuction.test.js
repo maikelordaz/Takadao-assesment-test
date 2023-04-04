@@ -7,7 +7,7 @@ const { constants } = require("@openzeppelin/test-helpers")
 !developmentChains.includes(network.name)
     ? describe.skip
     : describe("HackAuction unit tests", function () {
-          let auction, auctionDeployer, auctionAlice, auctionBob
+          let auction, auctionAlice, auctionBob
 
           beforeEach(async () => {
               // Get the accounts
