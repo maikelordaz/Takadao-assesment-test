@@ -1,6 +1,17 @@
 # Web3_smart contract developer assessment tests
 This project is intended to be a part of a technical test. <br/>
 
++ [Walkthrough](#Walkthrough)
++ [1. Questions and Answers](#Questions-and-Answers)
++ [Question 1.1](#Question-1)
++ [Answer 1.1](#Answer-1)
++ [Question 1.2](#Question-2)
++ [Answer 1.2](#Answer-2)
++ [Question 1.3](#Question-3)
++ [Answer 1.3](#Answer-3)
++ [Question 1.4](#Question-4)
++ [Answer 1.4](#Answer-4)
+
 ## :rocket: Walkthrough: 
 
 1. Clone this repo.
@@ -32,7 +43,7 @@ of the other popular blockchains. Provide consultation to the client on how he s
 approach this decision. You do not need to suggest a specific blockchain to the client,
 but you are required to explain the factors that may influence his final decision. (5 pt)
 
-#### :dart: Answer :dart:
+#### :dart: Answer 1 :dart:
 
 To assist the client I would try to list the things he has to be aware of, like:
 
@@ -58,7 +69,7 @@ implementation if any (that is, an organization that deeply depends on a central
 to function). (5 pt)
 See: https://www.kickstarter.com/articles/the-future-of-crowdfunding-creative-projects
 
-#### :dart: Answer :dart:
+#### :dart: Answer 2 :dart:
 
 The DAOs are more common as time passes, but regarding the numerous advatages they have, there are also some disadvatages. In my opinion the more important disadvantages are:
 
@@ -74,7 +85,7 @@ Describe the top 2 solidity security patterns that you personally think matters 
 when developing smart contracts. Describe what they are and what hacks they prevent.
 Why did you select these 2 out of the rest? (5 pt)
 
-#### :dart: Answer :dart:
+#### :dart: Answer 3 :dart:
 
 1. Secure Ether Transfers:
 
@@ -127,7 +138,7 @@ To succesfully apply this pattern all internal state must be fully up to date be
 Describe a solidity behviour pattern that you always account for when developing your
 smart contracts. Describe what it is, and what benefits it contributes to the code. (5 pt)
 
-#### :dart: Answer :dart:
+#### :dart: Answer 4 :dart:
 
 -   Guard Check:
 
