@@ -2,17 +2,27 @@
 
 ## Section 1: Long answers questions
 
+### Question 2: DAO
+
+The DAOs are more common as time passes, but regarding the numerous advatages they have, there are also some disadvatages. In my opinion the more important disadvantages are:
+
+-   Security: It is important that the developers cover all the security basics, as the DAOs always have money on them, there always in risk of attack, and when this happen, the way the DAOs manage everything won´t allow to decide a way to manage attacks in a fast way.
+-   Laws: As they run on blockchain,there has to be some laws that allow the DAOs to exist. But right now there are more news of countries trying to build walls to stop the inminent growth of blockchain.
+-   People: Leave all decisions to people who hasn´t been prepared on economy, insurance, geopolitical, etc. it can bring the risk of bad decisions.
+
+The way DAOs work, doesn´t leave room to highly hierarchical organizations, such as a Fire Department, health centers and similars
+
 ### Question 3: Security patterns
 
 1. Secure Ether Transfers:
 
-It is important to always secure and check every transfer, even though this feature is not the main application of Ethereum, it is still a necessary and highly used feature. It is important to use this pattern when:
+It is important to always secure and check every transfer, even though this feature is not the main application of Ethereum, it is still a necessary and highly used feature. I use this pattern when:
 
 -   Transfer from a contract address to another address in a scure way
 -   Not sure of which method use
 -   Want to avoid any re-entrancy attacks
 
-You have the next three methods
+There are three methods
 
 | Function   | Gas                           | Exception          | Units |
 | ---------- | ----------------------------- | ------------------ | ----- |
