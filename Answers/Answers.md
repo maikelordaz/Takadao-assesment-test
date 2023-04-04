@@ -2,6 +2,21 @@
 
 ## Section 1: Long answers questions
 
+### Question 1: Blockhain selection
+
+To assist the client I would try to list the things he has to be aware of, like:
+
+1. Use case: the use case of his dApp idea it is important to select the blockchain, for example Polygon explain in his whitepaper the mos potential use cases for their network like payments, games, lending, credits, identity and more.
+2. Comunity: Currently the most reliable projects use to be more decentralized, allowing users to have tokens and to be part of the decisions. The users tend to have public conversations and opinions on twitter, discord, reddit and telegram. May be a good idea to join the telegram group and the discord server to have a good lecture of the size of the comunity and to be sure if their opinions are taken in consideration.
+3. Scalability and transaction speed: The blockchain to take has to be able to receive and process the queries of the current users and the future ones. It is important to check the long terms plans.
+4. Consensus and governance: The blockchain is Proof of Work or Proof of Stake. The second one is the most scalable right now.
+5. Team: If there is no way to know the team behind a blockchain and a project, it is time to turn on the alarms.
+6. Roadmap: The short, mid and long terms objectives must be public and exhaustive, this means the team has spend time thinking on how to get better.
+7. Longevity: How the project has aged? It had recurrent delays? Has accomplished the roadmap?
+8. Development environment: The way to develop dApps on the blockchain is very important. Developers availables, frameworks, coding languages, etc. This can lead to troubles to build your developers team.
+
+I´ll suggest to start with one EVM compatible blockchain, maybe a layer 2 with high scalability, speed and one big comunity like Polygon or Arbitrum. And for mid-term scale the project to other EVM compatibles chains
+
 ### Question 2: DAO
 
 The DAOs are more common as time passes, but regarding the numerous advatages they have, there are also some disadvatages. In my opinion the more important disadvantages are:
@@ -10,7 +25,7 @@ The DAOs are more common as time passes, but regarding the numerous advatages th
 -   Laws: As they run on blockchain,there has to be some laws that allow the DAOs to exist. But right now there are more news of countries trying to build walls to stop the inminent growth of blockchain.
 -   People: Leave all decisions to people who hasn´t been prepared on economy, insurance, geopolitical, etc. it can bring the risk of bad decisions.
 
-The way DAOs work, doesn´t leave room to highly hierarchical organizations, such as a Fire Department, health centers and similars
+The way DAOs work, doesn´t leave room to highly hierarchical organizations, such as a Fire Department, health centers and similars, also payments dApps that have the responsability to pay salaries.
 
 ### Question 3: Security patterns
 
@@ -216,3 +231,5 @@ There was the need to write some deploy scripts. Check them on
 
 > deploy/03-section.js/01-deploy-auction.js
 > deploy/03-section.js/02-deploy-hack-auction.js
+
+## Section 4 : Web3 Dev Tasks
