@@ -32,6 +32,8 @@ of the other popular blockchains. Provide consultation to the client on how he s
 approach this decision. You do not need to suggest a specific blockchain to the client,
 but you are required to explain the factors that may influence his final decision. (5 pt)
 
+#### :dart: Answer :dart:
+
 #### :question: Question 2 :question:
 
 DAO’s are one of the common use cases on Ethereum. Currently, there are DAO’s for
@@ -43,11 +45,15 @@ implementation if any (that is, an organization that deeply depends on a central
 to function). (5 pt)
 See: https://www.kickstarter.com/articles/the-future-of-crowdfunding-creative-projects
 
+#### :dart: Answer :dart:
+
 #### :question: Question 3 :question:
 
 Describe the top 2 solidity security patterns that you personally think matters the most
 when developing smart contracts. Describe what they are and what hacks they prevent.
 Why did you select these 2 out of the rest? (5 pt)
+
+#### :dart: Answer :dart:
 
 #### :question: Question 4 :question:
 
@@ -71,6 +77,9 @@ function withdrawBalance(uint256 _amount) public {
     msg.sender.send(_amount);
 }
 ```
+
+#### :dart: Answer :dart:
+
 #### :question: Code snippet 2 :question:
 
 List any possible vulnerabilities in the following code and suggest clear fixes to the vulnerabilities.
@@ -98,6 +107,7 @@ contract Bank {
    }
 }
 ```
+#### :dart: Answer :dart:
 
 #### :question: Code snippet 3 :question:
 
@@ -111,6 +121,7 @@ If no vulnerabilities exist, explain why the code is invulnerable. (5pt)
       }
    }
 ```
+#### :dart: Answer :dart:
 
 ### :open_book: Section 3: Solidity Coding Tasks (10 pt)
 
@@ -143,6 +154,8 @@ contract Auction {
 -   Write down several unit tests (in javascript) to confirm that the attacker contract
     works correctly. (5 pt)
 
+#### :dart: Answer :dart:
+
 ### :open_book: Section 4 : Web3 Dev Tasks (10 pt)
 
 #### :question: Web 3 problem :question:
@@ -165,3 +178,5 @@ You are required to:
 4. Creativity of solution and tools used
 5. General architecture
 6. Cleanliness of code
+
+#### :dart: Answer :dart:
