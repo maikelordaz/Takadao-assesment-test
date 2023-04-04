@@ -3,15 +3,15 @@ This project is intended to be a part of a technical test. <br/>
 
 + [Walkthrough](#rocket-walkthrough)
 + [Questions and Answers](#books-questions-and-answers)
-+ [1. Long Answer Questions](#open_book-section-1:-long-answer-questions)
-+ [Question 1.1](#open_book-question-1)
-+ [Answer 1.1](#answer-1)
-+ [Question 1.2](#-Question-2)
-+ [Answer 1.2](#-Answer-2)
-+ [Question 1.3](#-Question-3)
-+ [Answer 1.3](#-Answer-3)
-+ [Question 1.4](#-Question-4)
-+ [Answer 1.4](#-Answer-4)
++ [1. Long Answer Questions](#open_book-long-answer-questions)
++ [Question 1.1](#question-question-1-question)
++ [Answer 1.1](#dart-answer-1-dart)
++ [Question 1.2](#question-question-2-question)
++ [Answer 1.2](#dart-answer-2-dart)
++ [Question 1.3](#question-question-3-question)
++ [Answer 1.3](#dart-answer-3-dart)
++ [Question 1.4](#question-question-4-question)
++ [Answer 1.4](#dart-answer-4-dart)
 
 ## :rocket: Walkthrough 
 
@@ -31,7 +31,7 @@ third section consists of solidity coding tasks. The fourth section consists of 
 Submit your solution via an open Github repository. Project must be cloned and executed with
 no errors. You have 7 days to complete these tasks from the date of application.
 
-### :open_book: Section 1: Long Answer Questions (20 pt)
+### :open_book: Long Answer Questions (20 pt)
 
 This section consists of 4 critical questions.
 
