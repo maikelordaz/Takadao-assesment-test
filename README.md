@@ -23,7 +23,7 @@ no errors. You have 7 days to complete these tasks from the date of application.
 
 This section consists of 4 critical questions.
 
-#### :question: Question 1
+#### :question: Question 1 :question:
 
 A client has approached you with a dApp idea that consists of a crowdfunding platform
 on the blockchain. He’s been hearing a lot about new and innovative blockchain’s such
@@ -32,7 +32,7 @@ of the other popular blockchains. Provide consultation to the client on how he s
 approach this decision. You do not need to suggest a specific blockchain to the client,
 but you are required to explain the factors that may influence his final decision. (5 pt)
 
-#### :question: Question 2
+#### :question: Question 2 :question:
 
 DAO’s are one of the common use cases on Ethereum. Currently, there are DAO’s for
 charities and crowdfunding. The general idea is to reinforce transparency, reduce
@@ -43,13 +43,13 @@ implementation if any (that is, an organization that deeply depends on a central
 to function). (5 pt)
 See: https://www.kickstarter.com/articles/the-future-of-crowdfunding-creative-projects
 
-#### :question: Question 3
+#### :question: Question 3 :question:
 
 Describe the top 2 solidity security patterns that you personally think matters the most
 when developing smart contracts. Describe what they are and what hacks they prevent.
 Why did you select these 2 out of the rest? (5 pt)
 
-#### :question: Question 4
+#### :question: Question 4 :question:
 
 Describe a solidity behviour pattern that you always account for when developing your
 smart contracts. Describe what it is, and what benefits it contributes to the code. (5 pt)
@@ -59,7 +59,7 @@ smart contracts. Describe what it is, and what benefits it contributes to the co
 This section consists of 3 questions. For each question, make sure to apply the fixes (if any)
 in a solidity file.
 
-#### :question: Code snippet 1
+#### :question: Code snippet 1 :question:
 
 List any possible vulnerabilities in the following code and suggest clear fixes to the vulnerabilities. If no vulnerabilities exist, explain why the code is invulnerable. (5 pt)
 
@@ -71,7 +71,7 @@ function withdrawBalance(uint256 _amount) public {
     msg.sender.send(_amount);
 }
 ```
-#### :question: Code snippet 2
+#### :question: Code snippet 2 :question:
 
 List any possible vulnerabilities in the following code and suggest clear fixes to the vulnerabilities.
 If no vulnerabilities exist, explain why the code is invulnerable. (5 pt)
@@ -99,7 +99,7 @@ contract Bank {
 }
 ```
 
-#### :question: Code snippet 3
+#### :question: Code snippet 3 :question:
 
 List any possible vulnerabilities in the following code and suggest clear fixes to the vulnerabilities.
 If no vulnerabilities exist, explain why the code is invulnerable. (5pt)
@@ -118,7 +118,7 @@ This section consists of 1 question. Make sure to submit the solidity files with
 Make sure that the solidity contracts are compiled and runnable. Make sure to add the
 appropriate comments to the file.
 
-#### :question: Problem code
+#### :question: Problem code :question:
 
 1. The following code snippet consists of a simple auction contract. The highest bidder
    becomes the new leader of the auction.
@@ -145,7 +145,7 @@ contract Auction {
 
 ### :open_book: Section 4 : Web3 Dev Tasks (10 pt)
 
-#### :question: Web 3 problem
+#### :question: Web 3 problem :question:
 
 Create a Single-Page-Application that displays a single table of all the account holders of the
 USDC stable coin on the Etherem blockchain. USDC is an ERC-20 contract with address:
