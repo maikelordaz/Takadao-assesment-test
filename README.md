@@ -1,16 +1,16 @@
 # Web3_smart contract developer assessment tests
 This project is intended to be a part of a technical test. <br/>
 
-+ [Walkthrough](#Walkthrough)
-+ [1. Questions and Answers](#Questions-and-Answers)
-+ [Question 1.1](#Question-1)
-+ [Answer 1.1](#Answer-1)
-+ [Question 1.2](#Question-2)
-+ [Answer 1.2](#Answer-2)
-+ [Question 1.3](#Question-3)
-+ [Answer 1.3](#Answer-3)
-+ [Question 1.4](#Question-4)
-+ [Answer 1.4](#Answer-4)
++ [Walkthrough](#-Walkthrough)
++ [1. Questions and Answers](#-Questions-and-Answers)
++ [Question 1.1](#-Question-1)
++ [Answer 1.1](#-Answer-1)
++ [Question 1.2](#-Question-2)
++ [Answer 1.2](#-Answer-2)
++ [Question 1.3](#-Question-3)
++ [Answer 1.3](#-Answer-3)
++ [Question 1.4](#-Question-4)
++ [Answer 1.4](#-Answer-4)
 
 ## :rocket: Walkthrough: 
 
