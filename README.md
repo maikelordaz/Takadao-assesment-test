@@ -2,7 +2,7 @@
 This project is intended to be a part of a technical test. <br/>
 
 + [Walkthrough](#rocket-walkthrough)
-+ [Assessment test](#books-questions-and-answers)
++ [Assessment test](#books-assessment-test)
     + [Section 1: Long Answer Questions](#open_book-long-answer-questions)
         + [Question 1.1](#question-question-1-question)
             + [Answer 1.1](#dart-answer-1-dart)
