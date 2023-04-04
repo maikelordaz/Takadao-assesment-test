@@ -1,17 +1,30 @@
-# Web3_smart contract developer assessment tests
+# Web3 smart contract developer assessment tests
 This project is intended to be a part of a technical test. <br/>
 
 + [Walkthrough](#rocket-walkthrough)
 + [Questions and Answers](#books-questions-and-answers)
-+ [1. Long Answer Questions](#open_book-long-answer-questions)
-+ [Question 1.1](#question-question-1-question)
-+ [Answer 1.1](#dart-answer-1-dart)
-+ [Question 1.2](#question-question-2-question)
-+ [Answer 1.2](#dart-answer-2-dart)
-+ [Question 1.3](#question-question-3-question)
-+ [Answer 1.3](#dart-answer-3-dart)
-+ [Question 1.4](#question-question-4-question)
-+ [Answer 1.4](#dart-answer-4-dart)
+    + [1. Long Answer Questions](#open_book-long-answer-questions)
+        + [Question 1.1](#question-question-1-question)
+            + [Answer 1.1](#dart-answer-1-dart)
+        + [Question 1.2](#question-question-2-question)
+            + [Answer 1.2](#dart-answer-2-dart)
+        + [Question 1.3](#question-question-3-question)
+            + [Answer 1.3](#dart-answer-3-dart)
+        + [Question 1.4](#question-question-4-question)
+            + [Answer 1.4](#dart-answer-4-dart)
+    + [2. Code Snippets](#open_book-code-snippets)
+        + [Snippet 2.1](#question-code-snippet-1-question)
+            + [Answer 2.1](#dart-snippet-1-answer-dart)
+        + [Snippet 2.2](#question-code-snippet-2-question)
+            + [Answer 2.2](#dart-snippet-2-answer-dart)
+        + [Snippet 2.3](#question-code-snippet-3-question)
+            + [Answer 2.3](#dart-snippet-3-answer-dart)
+    + [3. Solidity Coding Tasks](#open_book-solidity-coding-tasks)
+        + [Problem code](#question-problem-code-question)
+            + [Answer](#dart-answer-dart)
+    + [4. Web3 Dev Tasks](#open_book-web3-dev-tasks)
+        + [Problem code](#question-web3-problem-question)
+            + [Answer](#dart-web3-answer-dart)
 
 ## :rocket: Walkthrough 
 
@@ -23,6 +36,8 @@ This project is intended to be a part of a technical test. <br/>
     + POLYGONSCAN_API_KEY=to verify the contract if you deploy in some public net.
 5. Read the answers for the test below and follow the instructions when it is needed
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 ## :books: Questions and Answers 
 
 The tasks in this document are divided into 4 sections. The first section consists of open-ended
@@ -31,7 +46,9 @@ third section consists of solidity coding tasks. The fourth section consists of 
 Submit your solution via an open Github repository. Project must be cloned and executed with
 no errors. You have 7 days to complete these tasks from the date of application.
 
-### :open_book: Long Answer Questions (20 pt)
+[top](#web3-smart-contract-developer-assessment-tests)
+
+### :open_book: Long Answer Questions
 
 This section consists of 4 critical questions.
 
@@ -43,6 +60,8 @@ as Solana, Polkadot etc. He is unsure whether to deploy his idea on Ethereum or 
 of the other popular blockchains. Provide consultation to the client on how he should
 approach this decision. You do not need to suggest a specific blockchain to the client,
 but you are required to explain the factors that may influence his final decision. (5 pt)
+
+[top](#web3-smart-contract-developer-assessment-tests)
 
 #### :dart: Answer 1 :dart:
 
@@ -59,6 +78,8 @@ To assist the client I would try to list the things he has to be aware of, like:
 
 I´ll suggest to start with one EVM compatible blockchain, maybe a layer 2 with high scalability, speed and one big comunity like Polygon or Arbitrum. And for mid-term scale the project to other EVM compatibles chains
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :question: Question 2 :question:
 
 DAO’s are one of the common use cases on Ethereum. Currently, there are DAO’s for
@@ -70,6 +91,8 @@ implementation if any (that is, an organization that deeply depends on a central
 to function). (5 pt)
 See: https://www.kickstarter.com/articles/the-future-of-crowdfunding-creative-projects
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :dart: Answer 2 :dart:
 
 The DAOs are more common as time passes, but regarding the numerous advatages they have, there are also some disadvatages. In my opinion the more important disadvantages are:
@@ -80,11 +103,15 @@ The DAOs are more common as time passes, but regarding the numerous advatages th
 
 The way DAOs work, doesn´t leave room to highly hierarchical organizations, such as a Fire Department, health centers and similars, also payments dApps that have the responsability to pay salaries.
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :question: Question 3 :question:
 
 Describe the top 2 solidity security patterns that you personally think matters the most
 when developing smart contracts. Describe what they are and what hacks they prevent.
 Why did you select these 2 out of the rest? (5 pt)
+
+[top](#web3-smart-contract-developer-assessment-tests)
 
 #### :dart: Answer 3 :dart:
 
@@ -134,10 +161,14 @@ When calling an external address, the calling contract also transfers the contro
 
 To succesfully apply this pattern all internal state must be fully up to date before external interactions. This means that state variables should be updated before external calls, for example the balance of a user should be updated and then you make the transfer, if you apply the Secure Ether Transfer explained above there is no problem with this, because if something fails everything will be reverted included the balances updates.
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :question: Question 4 :question:
 
 Describe a solidity behviour pattern that you always account for when developing your
 smart contracts. Describe what it is, and what benefits it contributes to the code. (5 pt)
+
+[top](#web3-smart-contract-developer-assessment-tests)
 
 #### :dart: Answer 4 :dart:
 
@@ -156,7 +187,9 @@ For this we have `require()`, `assert()` and `revert()`. One important diference
 
 This pattern also increase the readability of the code.
 
-### :open_book: Section 2: Code Snippets (15 pt)
+[top](#web3-smart-contract-developer-assessment-tests)
+
+### :open_book: Code Snippets
 
 This section consists of 3 questions. For each question, make sure to apply the fixes (if any)
 in a solidity file.
@@ -174,7 +207,9 @@ function withdrawBalance(uint256 _amount) public {
 }
 ```
 
-#### :dart: Answer :dart:
+[top](#web3-smart-contract-developer-assessment-tests)
+
+#### :dart: Snippet 1 Answer :dart:
 
 -   Findings:
     1. "Critical" The contract has errors. "send" is only available to payable addresses
@@ -193,6 +228,8 @@ Suggested code:
         require(success, "Something went wrong");
     }
 ```
+
+[top](#web3-smart-contract-developer-assessment-tests)
 
 #### :question: Code snippet 2 :question:
 
@@ -221,7 +258,10 @@ contract Bank {
    }
 }
 ```
-#### :dart: Answer :dart:
+
+[top](#web3-smart-contract-developer-assessment-tests)
+
+#### :dart: Snippet 2 Answer :dart:
 
 -   Findings:
     1. "Critical" In the function withdrawBalance() a state variable is written after a call. In this case the mapping userBalance. This can lead to reentrancy attacks.
@@ -254,6 +294,8 @@ contract Bank {
 }
 ```
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :question: Code snippet 3 :question:
 
 List any possible vulnerabilities in the following code and suggest clear fixes to the vulnerabilities.
@@ -266,7 +308,10 @@ If no vulnerabilities exist, explain why the code is invulnerable. (5pt)
       }
    }
 ```
-#### :dart: Answer :dart:
+
+[top](#web3-smart-contract-developer-assessment-tests)
+
+#### :dart: Snippet 3 Answer :dart:
 
 -   Findings:
     1. "Medium" In the for loop the local variable "X" it is not initialized
@@ -282,7 +327,9 @@ Suggested code:
     }
 ```
 
-### :open_book: Section 3: Solidity Coding Tasks (10 pt)
+[top](#web3-smart-contract-developer-assessment-tests)
+
+### :open_book: Solidity Coding Tasks
 
 This section consists of 1 question. Make sure to submit the solidity files with this document.
 Make sure that the solidity contracts are compiled and runnable. Make sure to add the
@@ -313,6 +360,8 @@ contract Auction {
 -   Write down several unit tests (in javascript) to confirm that the attacker contract
     works correctly. (5 pt)
 
+[top](#web3-smart-contract-developer-assessment-tests)
+
 #### :dart: Answer :dart:
 
 The solidity smart contract that exploit and hack the Auction contract is in the folder
@@ -336,9 +385,11 @@ There was the need to write some deploy scripts. Check them on
 > deploy/03-section.js/01-deploy-auction.js
 > deploy/03-section.js/02-deploy-hack-auction.js
 
-### :open_book: Section 4 : Web3 Dev Tasks (10 pt)
+[top](#web3-smart-contract-developer-assessment-tests)
 
-#### :question: Web 3 problem :question:
+### :open_book: Web3 Dev Tasks
+
+#### :question: Web3 problem :question:
 
 Create a Single-Page-Application that displays a single table of all the account holders of the
 USDC stable coin on the Etherem blockchain. USDC is an ERC-20 contract with address:
@@ -359,4 +410,8 @@ You are required to:
 5. General architecture
 6. Cleanliness of code
 
-#### :dart: Answer :dart:
+[top](#web3-smart-contract-developer-assessment-tests)
+
+#### :dart: Web3 Answer :dart:
+
+[top](#web3-smart-contract-developer-assessment-tests)
