@@ -38,7 +38,7 @@ This project is intended to be a part of a technical test. <br/>
 
 [top](#web3-smart-contract-developer-assessment-tests)
 
-## :books: Questions and Answers 
+## :books: Assessment test
 
 The tasks in this document are divided into 4 sections. The first section consists of open-ended
 questions. The second section consists of code snippets that require some type of analysis. The
