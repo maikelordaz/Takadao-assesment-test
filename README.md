@@ -2,8 +2,8 @@
 This project is intended to be a part of a technical test. <br/>
 
 + [Walkthrough](#rocket-walkthrough)
-+ [Questions and Answers](#books-questions-and-answers)
-    + [1. Long Answer Questions](#open_book-long-answer-questions)
++ [Assessment test](#books-questions-and-answers)
+    + [Section 1: Long Answer Questions](#open_book-long-answer-questions)
         + [Question 1.1](#question-question-1-question)
             + [Answer 1.1](#dart-answer-1-dart)
         + [Question 1.2](#question-question-2-question)
@@ -12,17 +12,17 @@ This project is intended to be a part of a technical test. <br/>
             + [Answer 1.3](#dart-answer-3-dart)
         + [Question 1.4](#question-question-4-question)
             + [Answer 1.4](#dart-answer-4-dart)
-    + [2. Code Snippets](#open_book-code-snippets)
+    + [Section 2: Code Snippets](#open_book-code-snippets)
         + [Snippet 2.1](#question-code-snippet-1-question)
             + [Answer 2.1](#dart-snippet-1-answer-dart)
         + [Snippet 2.2](#question-code-snippet-2-question)
             + [Answer 2.2](#dart-snippet-2-answer-dart)
         + [Snippet 2.3](#question-code-snippet-3-question)
             + [Answer 2.3](#dart-snippet-3-answer-dart)
-    + [3. Solidity Coding Tasks](#open_book-solidity-coding-tasks)
+    + [Section 3: Solidity Coding Tasks](#open_book-solidity-coding-tasks)
         + [Problem code](#question-problem-code-question)
             + [Answer](#dart-answer-dart)
-    + [4. Web3 Dev Tasks](#open_book-web3-dev-tasks)
+    + [Section 4: Web3 Dev Tasks](#open_book-web3-dev-tasks)
         + [Problem code](#question-web3-problem-question)
             + [Answer](#dart-web3-answer-dart)
 
@@ -212,7 +212,7 @@ function withdrawBalance(uint256 _amount) public {
 
 #### :dart: Snippet 1 Answer :dart:
 
-Check the solidity file at [here](./contracts/Section_2/Withdraw.sol)
+Check the solidity file [here](./contracts/Section_2/Withdraw.sol)
 
 -   Findings:
     1. "Critical" The contract has errors. "send" is only available to payable addresses
@@ -268,7 +268,7 @@ contract Bank {
 
 #### :dart: Snippet 2 Answer :dart:
 
-Check the solidity file at [here](./contracts/Section_2/Bank.sol)
+Check the solidity file [here](./contracts/Section_2/Bank.sol)
 
 -   Findings:
     1. "Critical" In the function withdrawBalance() a state variable is written after a call. In this case the mapping userBalance. This can lead to reentrancy attacks.
@@ -318,7 +318,7 @@ If no vulnerabilities exist, explain why the code is invulnerable. (5pt)
 
 #### :dart: Snippet 3 Answer :dart:
 
-Check the solidity file at [here](./contracts/Section_2/Refund.sol)
+Check the solidity file [here](./contracts/Section_2/Refund.sol)
 
 -   Findings:
     1. "Medium" In the for loop the local variable "X" it is not initialized
