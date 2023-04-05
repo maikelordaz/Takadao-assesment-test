@@ -1,0 +1,24 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: FiatTokenProxy
+    network: mainnet
+    source:
+      address: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      abi: FiatTokenProxy
+      startBlock: 16800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: FiatTokenProxy
+          file: FiatTokenProxy/abis/FiatTokenProxy.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: FiatTokenProxy/FiatTokenProxy.wasm

