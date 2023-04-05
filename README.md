@@ -415,7 +415,7 @@ You are required to:
 
 #### :dart: Web3 Answer :dart:
 
-To log the events from the Transfer event I used the graph to index the blockchain event. Check the files to create it in the folder [subgraph](./subgraph/) 
+To log the events from the Transfer event I used the graph to index the blockchain event. It is important to note that USDC is behind a proxy, so the abi file used is from the implementation comtract. Check the files to create it in the folder [subgraph](./subgraph/) 
 
 You can use the playground from the graph to do some queries by yourself, just go [here](https://api.studio.thegraph.com/query/33833/erc20-snapshot/v0.0.3)
 
