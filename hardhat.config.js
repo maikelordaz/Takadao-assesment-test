@@ -16,9 +16,6 @@ const BOB = "0xd26235AF7919C81470481fF4436B5465B0bbF6F2"
 /******************************************* RPC providers **********************************************/
 const MUMBAI_TESTNET_RPC_URL = process.env.MUMBAI_TESTNET_RPC_URL
 
-/************************************** Networks Scans *************************************************/
-const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY
-
 /***************************************** Config ******************************************************/
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -52,11 +49,6 @@ module.exports = {
             url: MUMBAI_TESTNET_RPC_URL,
             blockConfirmations: 6,
             timeout: 300000,
-        },
-    },
-    etherscan: {
-        apiKey: {
-            polygonMumbai: POLYGONSCAN_API_KEY,
         },
     },
     namedAccounts: {
