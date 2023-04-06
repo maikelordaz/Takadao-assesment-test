@@ -1,5 +1,5 @@
 # Web3 smart contract developer assessment tests
-This project is intended to be a part of a technical test. <br/>
+This project is intended to be a part of a technical test. Press the links below to go to the desired section <br/>
 
 + [Walkthrough](#rocket-walkthrough)
 + [Assessment test](#books-assessment-test)
@@ -30,10 +30,7 @@ This project is intended to be a part of a technical test. <br/>
 
 1. Clone this repo.
 3. Install the dependencies with  `yarn install.
-4. Create an .env file with the next variables: 
-    + DEPLOYER_PRIVATE_KEY=corresponding to your address private key.
-    + MUMBAI_TESTNET_RPC_URL=Use your RPC provider of preference
-    + POLYGONSCAN_API_KEY=to verify the contract if you deploy in some public net.
+4. There is no need to create a .env file, this project runs only locally, it is not intended to run on any blockchain
 5. Read the answers for the test below and follow the instructions when it is needed
 
 [top](#web3-smart-contract-developer-assessment-tests)
