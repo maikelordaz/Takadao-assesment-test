@@ -11,6 +11,8 @@
   "dependencies": {
     "@apollo/client": "^3.7.11",
     "graphql": "^16.6.0",
+    "graphql-request": "^5.2.0",
+    "graphql-tag": "^2.12.6",
     "magic-sdk": "^16.1.0",
     "moralis": "^1.8.0",
     "moralis-v1": "^1.12.0",
