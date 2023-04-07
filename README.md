@@ -32,7 +32,7 @@ This project is intended to be a part of a technical test. <br/>
 3. Install the dependencies with  `yarn install.
 4. Create an .env file with the next variables: 
     + DEPLOYER_PRIVATE_KEY=corresponding to your address private key.
-    + MUMBAI_TESTNET_RPC_URL=Use your RPC provider of preference, to this project I used Alchemy
+    + MUMBAI_TESTNET_RPC_URL=Use your RPC provider of preference, to this project I used Alchemy - mumbai network
 5. Read the answers for the test below and follow the instructions when it is needed
 
 [top](#web3-smart-contract-developer-assessment-tests)
