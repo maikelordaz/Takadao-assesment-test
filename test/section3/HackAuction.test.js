@@ -27,7 +27,7 @@ const { constants } = require("@openzeppelin/test-helpers")
 
           it("Should make the hack", async function () {
               /*
-            + I chck for the initials values of currentLeader and highestBid, as they are private
+            + I check for the initials values of currentLeader and highestBid, as they are private
             * variables, I can not acces directly by the view function as they were public, but I
             * can acces the variables stores at memory slots. currentLeader is an address so it ocupies
             * the complete slot at position 0. highestBid is an uint256 so it also ocupies a complete

@@ -3,7 +3,6 @@ require("dotenv").config()
 require("@nomiclabs/hardhat-waffle")
 require("hardhat-deploy")
 require("solidity-coverage")
-require("hardhat-contract-sizer")
 
 /******************************************** Private Keys *********************************************/
 const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY
@@ -73,9 +72,5 @@ module.exports = {
     },
     mocha: {
         timeout: 300000,
-    },
-    contractSizer: {
-        alphaSort: true,
-        runOnCompile: true,
     },
 }
