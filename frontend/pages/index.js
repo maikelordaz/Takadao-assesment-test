@@ -1,4 +1,4 @@
-import { Dash } from "../components/dash"
+import Dash from "../components/dash"
 
 export default function Home() {
     return (

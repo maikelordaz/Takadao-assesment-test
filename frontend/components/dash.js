@@ -18,21 +18,19 @@ export default function Dash() {
             <div className="overflow-x-auto w-11/12 rounded-3xl px-4">
                 <div className="p-1.5 w-full inline-block align-middle border rounded-lg bg-white pt-10 px-4">
                     <div className="dashboard-letters mb-1">Active transfers</div>
-                    <div className="overflow-x-auto" style="visible">
+                    <div>
                         <table className="divide-y divide-gray-200 min-w-full">
                             <thead>
                                 <tr>
                                     <th
                                         scope="col"
                                         className="px-6 py-3 text-xs font-bold text-gray-500 uppercase text-center whitespace-nowrap"
-                                        style={{ color: "#184261" }}
                                     >
                                         Address
                                     </th>
                                     <th
                                         scope="col"
                                         className="px-6 py-3 text-xs font-bold text-gray-500 uppercase text-center whitespace-nowrap"
-                                        style={{ color: "#184261" }}
                                     >
                                         Balance
                                     </th>
@@ -46,10 +44,10 @@ export default function Dash() {
                                         return (
                                             <tr key={tx.id}>
                                                 <td className="px-6 py-4 text-sm font-medium whitespace-nowrap flex justify-start">
-                                                    {transfer.to}
+                                                    {data.transfers.to}
                                                 </td>
                                                 <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                                                    {transfer.value}
+                                                    {data.transfers.value}
                                                 </td>
                                             </tr>
                                         )
