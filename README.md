@@ -29,7 +29,7 @@ This project is intended to be a part of a technical test. <br/>
 ## :rocket: Walkthrough 
 
 1. Clone this repo.
-3. Install the dependencies with  `yarn install.
+3. Install the dependencies with  `yarn install`.
 4. Create an .env file with the next variables: 
     + DEPLOYER_PRIVATE_KEY=corresponding to your address private key.
     + MUMBAI_TESTNET_RPC_URL=Use your RPC provider of preference, to this project I used Alchemy - mumbai network
@@ -430,5 +430,9 @@ There you can set the queries for the transfer event. For example you can get th
         }
     }
 ```
+
+You can navigate into the directory with `cd frontend/` and run `yarn install` and then `yarn dev`
+
+Or check the deployed site in [here](https://startling-zabaione-87818e.netlify.app/)
 
 [top](#web3-smart-contract-developer-assessment-tests)
