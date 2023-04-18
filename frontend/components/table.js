@@ -8,7 +8,11 @@ export default function Table() {
             transfers(
                 orderBy: value
                 orderDirection: desc
-                where: { to_not: "0x0000000000000000000000000000000000000000" }
+                where: {
+                    to_not: "0x0000000000000000000000000000000000000000"
+                    from_not: "0x0000000000000000000000000000000000000000"
+                    value_not: "0"
+                }
             ) {
                 id
                 from
